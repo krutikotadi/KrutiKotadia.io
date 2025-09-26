@@ -1,147 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kruti Kotadia | Data Engineer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    body { font-family: 'Montserrat', sans-serif; background: #f5fbfc; margin: 0; }
-    .container { max-width: 900px; margin: 3em auto; background: #fff; padding: 2.5em 2em; border-radius: 16px; box-shadow: 0 2px 18px rgba(30,70,130,0.08);}
-    h1 { color: #1976d2; font-size: 2.8em; margin-bottom: 0.3em; }
-    h3 { color: #275c68; font-size: 1.3em; font-weight: 400; margin-bottom: 1.5em; }
-    .animated-text { 
-      display: inline-block; 
-      border-right: .09em solid #1976d2; 
-      white-space: nowrap; 
-      overflow: hidden; 
-      animation: typing 2.2s steps(28, end), blink-caret 1s step-end infinite;
-    }
-    @keyframes typing { 0% {width: 0} 100% {width: 28ch;} }
-    @keyframes blink-caret { 0%,100% {border-color: transparent;} 40% {border-color: #1976d2;} }
-
-    .badge { display: inline-block; background: #e3f2fd; color: #1976d2; font-size: 1em; border-radius: 8px; padding: .25em .8em; margin: .2em .4em; }
-
-    .section { margin-bottom: 2.6em; opacity:0; animation: fadeInSec 1.2s cubic-bezier(.49,.44,.5,1) forwards;}
-    .section:nth-child(1) {animation-delay: 0.2s;}
-    .section:nth-child(2) {animation-delay: 0.5s;}
-    .section:nth-child(3) {animation-delay: 0.9s;}
-    .section:nth-child(4) {animation-delay: 1.3s;}
-    .section:nth-child(5) {animation-delay: 1.6s;}
-    .section:nth-child(6) {animation-delay: 2.0s;}
-    @keyframes fadeInSec {to{opacity:1;}}
-
-    .projects { display: flex; flex-wrap: wrap; gap: 1.6em; }
-    .card {
-      background: #fafbff;
-      border-radius: 10px;
-      box-shadow: 0 1px 8px rgba(44,54,74,0.10);
-      padding: 1.2em 1em;
-      width: calc(50% - 1.6em);
-      transition: transform .23s, box-shadow .23s;
-      cursor: pointer;
-      min-width: 260px;
-      margin-bottom: 0.6em;
-    }
-    .card:hover { transform: translateY(-5px) scale(1.025); box-shadow: 0 6px 18px #1976d256;}
-    .card-title { font-size: 1.15em; color: #0d47a1; margin-bottom: .2em;}
-    .card-desc { font-size: 1em; color: #224266;}
-    .card-tech { color: #289a6c; font-size: .95em; margin-top: .4em;}
-    ul { padding-left: 1.1em;}
-    .social-icons {margin-top:1.2em;}
-    .social-icons a { text-decoration: none; color: #275c68; margin-right: 18px; font-size: 1.6em; transition: color .18s;}
-    .social-icons a:hover { color: #1976d2;}
-    .contact { font-size: 1.06em; color: #203040; }
-    @media (max-width:700px) {.projects {flex-direction: column;}.card{width:100%!important;} .container{padding:1em 0.3em;}}
-
+    :root{--primary:#1976d2;--ink:#203040;--muted:#5a6b7a;--chip:#e3f2fd;--bg:#f5fbfc;}
+    *{box-sizing:border-box}
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);margin:0;color:var(--ink);}
+    .container{max-width:1080px;margin:2rem auto;padding:2rem;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(25,118,210,.08)}
+    header.hero{display:flex;flex-direction:column;gap:.5rem}
+    h1{color:var(--primary);font-size:2.2rem;margin:.25rem 0}
+    .subtitle{color:var(--muted);font-weight:600}
+    .animated-text{display:inline-block;border-right:.1em solid var(--primary);white-space:nowrap;overflow:hidden;animation:typing 2.2s steps(32,end), blink 1s step-end infinite}
+    @keyframes typing{from{width:0} to{width:32ch}}
+    @keyframes blink{0%,100%{border-color:transparent}40%{border-color:var(--primary)}}
+    section{margin-top:2rem}
+    h2{font-size:1.4rem;color:#275c68;margin:.2rem 0 1rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+    .chip{background:var(--chip);color:var(--primary);border-radius:999px;padding:.35rem .7rem;font-size:.9rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .card{background:#fafbff;border:1px solid #e8eef6;border-radius:12px;padding:1rem;transition:.2s;display:flex;flex-direction:column;gap:.5rem}
+    .card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(25,118,210,.15)}
+    .card h3{color:#0d47a1;margin:.2rem 0;font-size:1.05rem}
+    .card p{margin:.2rem 0;color:#224266;font-size:.95rem}
+    .card .links a{font-size:.9rem;color:var(--primary);text-decoration:none}
+    ul{margin:.2rem 0 .2rem 1.2rem}
+    .meta{color:#47607a;font-size:.9rem}
+    .social a{color:#275c68;margin-right:14px;font-size:1.4rem;text-decoration:none}
+    .social a:hover{color:var(--primary)}
+    footer{margin-top:1.5rem;color:#6b7d90;font-size:.9rem}
+    details summary{cursor:pointer;color:#0d47a1;font-weight:600}
+    @media (max-width:768px){.col-6{grid-column:span 12}.container{padding:1.25rem}}
   </style>
 </head>
 <body>
   <div class="container">
+    <header class="hero">
+      <span class="subtitle">Hi, I'm</span>
+      <h1>Kruti Kotadia</h1>
+      <div class="animated-text">Data Engineer | Analyst | Dashboard Creator</div>
+    </header>
 
-    <h1>Kruti Kotadia</h1>
-    <h3>
-      <span class="animated-text">Data Engineer | Analyst | Dashboard Creator</span>
-    </h3>
+    <section id="about">
+      <h2>About</h2>
+      <p>I'm a results-driven Data Engineer and Analyst who builds scalable data pipelines and intuitive analytics to empower decision-makers. I love turning messy, complex datasets into clean models, efficient ETL, and accessible dashboards that drive action.</p>
+    </section>
 
-    <div class="section">
-      <h2>About Me</h2>
-      <p>I'm a results-driven Data Engineer and Analyst. I build scalable data infrastructure and design visual analytics to empower decision-makers. I love turning complex datasets into accessible dashboards and insights.</p>
-    </div>
-
-    <div class="section">
+    <section id="skills">
       <h2>Skills</h2>
-      <div>
-        <span class="badge">SQL</span>
-        <span class="badge">Python</span>
-        <span class="badge">R</span>
-        <span class="badge">Tableau</span>
-        <span class="badge">Power BI</span>
-        <span class="badge">Excel</span>
-        <span class="badge">AWS</span>
-        <span class="badge">GCP</span>
-        <span class="badge">OCI</span>
-        <span class="badge">Docker</span>
-        <span class="badge">Kubernetes</span>
-        <span class="badge">Oracle</span>
-        <span class="badge">MySQL</span>
-        <span class="badge">PostgreSQL</span>
-        <span class="badge">Apache Spark</span>
-        <span class="badge">Databricks</span>
+      <div class="chips">
+        <span class="chip">SQL</span>
+        <span class="chip">Python</span>
+        <span class="chip">R</span>
+        <span class="chip">Tableau</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">Excel</span>
+        <span class="chip">AWS</span>
+        <span class="chip">GCP</span>
+        <span class="chip">OCI</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Kubernetes</span>
+        <span class="chip">Oracle</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Apache Spark</span>
+        <span class="chip">Databricks</span>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="experience">
       <h2>Experience</h2>
       <ul>
-        <li><b>iConsult Collaborative (2025–Present)</b> &mdash; Data Engineer<br>
-          Automated Spark ETL pipelines, 1TB+ data daily. Created Tableau dashboards, automated SQL checks, reduced manual effort by 50%.</li>
-        <li><b>Tata Consultancy Services (2023)</b> &mdash; Data Engineer<br>
-          Proposed and built client automation; reduced pipeline runtime by 30%.</li>
-        <li><b>Capgemini LTD (2019–2022)</b> &mdash; Data Analyst<br>
-          Automated data cleaning (60% less manual), built advanced Power BI dashboards.</li>
+        <li><strong>iConsult Collaborative</strong> (2025–Present) — Data Engineer<br/>
+          <span class="meta">Automated Spark ETL pipelines processing 1TB+ daily; built Tableau dashboards; automated SQL data-quality checks reducing manual effort by 50%.</span>
+        </li>
+        <li><strong>Tata Consultancy Services</strong> (2023) — Data Engineer<br/>
+          <span class="meta">Designed client automation improving pipeline runtime by ~30%.</span>
+        </li>
+        <li><strong>Capgemini LTD</strong> (2019–2022) — Data Analyst<br/>
+          <span class="meta">Automated data cleaning (60% less manual work) and built advanced Power BI dashboards.</span>
+        </li>
       </ul>
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="projects">
       <h2>Featured Projects</h2>
       <div class="projects">
-        <div class="card">
-          <div class="card-title">IMDb Data Analysis</div>
-          <div class="card-desc">Processed 100M+ movie records, engineered rapid ETL and insightful dimensional dashboards.</div>
-          <div class="card-tech">Tools: DBT, Tableau, Power BI, Snowflake</div>
-        </div>
-        <div class="card">
-          <div class="card-title">Visualizing AI Careers in the U.S.</div>
-          <div class="card-desc">Scraped/analyzed 10,000+ AI job listings; delivered dashboards forecasting skills, hiring trends.</div>
-          <div class="card-tech">Tools: Python, Tableau</div>
-        </div>
-        <div class="card">
-          <div class="card-title">Syracuse Hoops Competition</div>
-          <div class="card-desc">Cleaned 500K+ athlete records; built dashboards for injury risk, athletic workload analysis.</div>
-          <div class="card-tech">Tools: Python, Tableau</div>
-        </div>
+        <article class="card">
+          <h3>Soccer-Analysis</h3>
+          <p>Analyzed Lionel Messi’s evolution at Barcelona using StatsBomb event data; explored shooting, passing, and positional trends over seasons.</p>
+          <div class="meta">Tech: Python, Pandas, Visualization</div>
+          <div class="links"><a href="https://github.com/krutikotadi/Soccer-Analysis" target="_blank" rel="noopener">Repository ↗</a></div>
+        </article>
+        <article class="card">
+          <h3>Energy-Consumption-Forecasting</h3>
+          <p>Built time-series models (Linear Regression &amp; SVM) to predict power demand; created an interactive Shiny dashboard and strategies to reduce peak load.</p>
+          <div class="meta">Tech: R, Shiny, Forecasting, SVM</div>
+          <div class="links"><a href="https://github.com/krutikotadi/Energy-Consumption-Forecasting" target="_blank" rel="noopener">Repository ↗</a></div>
+        </article>
+        <article class="card">
+          <h3>Inventory-Demand-Forecasting</h3>
+          <p>Modeled SKU-level demand with feature engineering and evaluation to improve inventory planning and reduce stockouts.</p>
+          <div class="meta">Tech: Python, scikit-learn, Time Series</div>
+          <div class="links"><a href="https://github.com/krutikotadi/Inventory-Demand-Forecasting" target="_blank" rel="noopener">Repository ↗</a></div>
+        </article>
+        <article class="card">
+          <h3>Smart-Visual-Question-Answering</h3>
+          <p>Prototype VQA system for visually impaired users: ask a question about an image and receive a helpful answer.</p>
+          <div class="meta">Tech: Deep Learning, Computer Vision, NLP</div>
+          <div class="links"><a href="https://github.com/krutikotadi/Smart-Visual-Question-Answering" target="_blank" rel="noopener">Repository ↗</a></div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><b>MS, Applied Data Science</b> &mdash; Syracuse University (2023–2025)</li>
-        <li><b>BS, Information Technology</b> &mdash; University of Mumbai (2016–2019)</li>
+        <li>MS, Applied Data Science — Syracuse University (2023–2025)</li>
+        <li>BS, Information Technology — University of Mumbai (2016–2019)</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="section contact">
+    <section id="contact">
       <h2>Contact</h2>
-      <div class="social-icons">
-        <a href="mailto:k26kotadia@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="YOUR_LINKEDIN_URL" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="YOUR_GITHUB_URL" title="GitHub"><i class="fab fa-github"></i></a>
+      <p class="meta">Open to roles in Data Engineering and Analytics. Feel free to reach out.</p>
+      <div class="social">
+        <a title="Email" href="mailto:k26kotadia@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a title="GitHub" href="https://github.com/krutikotadi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        <a title="LinkedIn" href="https://www.linkedin.com/in/kruti-kotadia" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
       </div>
-      <span>Let’s connect—drop me a message or find me on LinkedIn/GitHub!</span>
-    </div>
+    </section>
+
+    <section id="more">
+      <details>
+        <summary>More Selected Work</summary>
+        <div class="projects" style="margin-top: .75rem;">
+          <article class="card">
+            <h3>IMDb Data Analysis</h3>
+            <p>Processed large movie datasets to build dimensional models and dashboards for insights.</p>
+            <div class="meta">DBT, Snowflake, Tableau</div>
+          </article>
+          <article class="card">
+            <h3>AI Careers Visualization</h3>
+            <p>Scraped and analyzed AI job postings to highlight skills trends and hiring outlook.</p>
+            <div class="meta">Python, Tableau</div>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Kruti Kotadia · Built for GitHub Pages
+    </footer>
   </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
