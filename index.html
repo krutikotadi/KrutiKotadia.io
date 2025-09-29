@@ -34,83 +34,51 @@
     .card .links a{font-size:.9rem;color:var(--primary);text-decoration:none}
     ul{margin:.2rem 0 .2rem 1.2rem}
     .meta{color:#47607a;font-size:.9rem}
-    .social a{color:#275c68;margin-right:14px;font-size:1.4rem;text-decoration:none}
-    .social a:hover{color:var(--primary)}
-    footer{margin-top:1.5rem;color:#6b7d90;font-size:.9rem}
-    details summary{cursor:pointer;color:#0d47a1;font-weight:600}
-    @media (max-width:768px){.col-6{grid-column:span 12}.container{padding:1.25rem}}
+    .social{display:flex;gap:1rem;font-size:1.5rem}
+    .social a{color:var(--primary);transition:.2s}
+    .social a:hover{color:#0d47a1}
   </style>
 </head>
 <body>
   <div class="container">
     <header class="hero">
-      <span class="subtitle">Hi, I'm</span>
       <h1>Kruti Kotadia</h1>
-      <div class="animated-text">Data Engineer | Analyst | Dashboard Creator</div>
+      <p class="subtitle"><span class="animated-text">Data Engineer | BI Developer</span></p>
     </header>
-
     <section id="about">
       <h2>About</h2>
-      <p>I'm a results-driven Data Engineer and Analyst who builds scalable data pipelines and intuitive analytics to empower decision-makers. I love turning messy, complex datasets into clean models, efficient ETL, and accessible dashboards that drive action.</p>
+      <p>Graduate student in Applied Data Science with hands-on experience in data engineering, cloud platforms, ETL, and analytics. Passionate about building scalable data pipelines and delivering actionable insights.</p>
     </section>
-
     <section id="skills">
-      <h2>Skills</h2>
+      <h2>Core Skills</h2>
       <div class="chips">
-        <span class="chip">SQL</span>
         <span class="chip">Python</span>
-        <span class="chip">R</span>
+        <span class="chip">SQL</span>
+        <span class="chip">AWS</span>
+        <span class="chip">Snowflake</span>
+        <span class="chip">DBT</span>
+        <span class="chip">Spark</span>
         <span class="chip">Tableau</span>
         <span class="chip">Power BI</span>
-        <span class="chip">Excel</span>
-        <span class="chip">AWS</span>
-        <span class="chip">GCP</span>
-        <span class="chip">OCI</span>
-        <span class="chip">Docker</span>
-        <span class="chip">Kubernetes</span>
-        <span class="chip">Oracle</span>
-        <span class="chip">MySQL</span>
-        <span class="chip">PostgreSQL</span>
-        <span class="chip">Apache Spark</span>
-        <span class="chip">Databricks</span>
+        <span class="chip">Airflow</span>
+        <span class="chip">ETL</span>
       </div>
     </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>iConsult Collaborative</strong> (2025–Present) — Data Engineer<br/>
-          <span class="meta">Automated Spark ETL pipelines processing 1TB+ daily; built Tableau dashboards; automated SQL data-quality checks reducing manual effort by 50%.</span>
-        </li>
-        <li><strong>Tata Consultancy Services</strong> (2023) — Data Engineer<br/>
-          <span class="meta">Designed client automation improving pipeline runtime by ~30%.</span>
-        </li>
-        <li><strong>Capgemini LTD</strong> (2019–2022) — Data Analyst<br/>
-          <span class="meta">Automated data cleaning (60% less manual work) and built advanced Power BI dashboards.</span>
-        </li>
-      </ul>
-    </section>
-
     <section id="projects">
       <h2>Featured Projects</h2>
       <div class="projects">
         <article class="card">
-          <h3>Soccer-Analysis</h3>
-          <p>Analyzed Lionel Messi’s evolution at Barcelona using StatsBomb event data; explored shooting, passing, and positional trends over seasons.</p>
-          <div class="meta">Tech: Python, Pandas, Visualization</div>
-          <div class="links"><a href="https://github.com/krutikotadi/Soccer-Analysis" target="_blank" rel="noopener">Repository ↗</a></div>
-        </article>
-        <article class="card">
-          <h3>Energy-Consumption-Forecasting</h3>
-          <p>Built time-series models (Linear Regression &amp; SVM) to predict power demand; created an interactive Shiny dashboard and strategies to reduce peak load.</p>
-          <div class="meta">Tech: R, Shiny, Forecasting, SVM</div>
-          <div class="links"><a href="https://github.com/krutikotadi/Energy-Consumption-Forecasting" target="_blank" rel="noopener">Repository ↗</a></div>
-        </article>
-        <article class="card">
-          <h3>Inventory-Demand-Forecasting</h3>
-          <p>Modeled SKU-level demand with feature engineering and evaluation to improve inventory planning and reduce stockouts.</p>
-          <div class="meta">Tech: Python, scikit-learn, Time Series</div>
-          <div class="links"><a href="https://github.com/krutikotadi/Inventory-Demand-Forecasting" target="_blank" rel="noopener">Repository ↗</a></div>
+          <h3>IMDb Data Analysis & Warehousing</h3>
+          <p>Comprehensive data warehousing project processing large-scale IMDb datasets. Built dimensional models (star schema) for efficient querying, implemented ETL pipelines with optimization strategies, and created interactive BI dashboards for movie industry insights.</p>
+          <ul>
+            <li>Designed and implemented star schema with fact and dimension tables</li>
+            <li>Optimized ETL processes for data ingestion and transformation</li>
+            <li>Built interactive dashboards in Tableau and Power BI</li>
+            <li>Leveraged Snowflake for cloud data warehousing</li>
+            <li>Used DBT for data transformation and modeling</li>
+            <li>Integrated with Oracle for legacy data sources</li>
+          </ul>
+          <div class="meta">Tech: Snowflake, DBT, Tableau, Power BI, Oracle, Dimensional Modeling, ETL Optimization, Data Warehousing, BI</div>
         </article>
         <article class="card">
           <h3>Smart-Visual-Question-Answering</h3>
@@ -120,7 +88,6 @@
         </article>
       </div>
     </section>
-
     <section id="education">
       <h2>Education</h2>
       <ul>
@@ -128,7 +95,6 @@
         <li>BS, Information Technology — University of Mumbai (2016–2019)</li>
       </ul>
     </section>
-
     <section id="contact">
       <h2>Contact</h2>
       <p class="meta">Open to roles in Data Engineering and Analytics. Feel free to reach out.</p>
@@ -138,30 +104,22 @@
         <a title="LinkedIn" href="https://www.linkedin.com/in/kruti-kotadia" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
       </div>
     </section>
-
     <section id="more">
       <details>
         <summary>More Selected Work</summary>
         <div class="projects" style="margin-top: .75rem;">
           <article class="card">
-            <h3>IMDb Data Analysis</h3>
-            <p>Processed large movie datasets to build dimensional models and dashboards for insights.</p>
-            <div class="meta">DBT, Snowflake, Tableau</div>
-          </article>
-          <article class="card">
             <h3>AI Careers Visualization</h3>
             <p>Scraped and analyzed AI job postings to highlight skills trends and hiring outlook.</p>
-            <div class="meta">Python, Tableau</div>
+            <div class="meta">Tech: Python, Tableau</div>
           </article>
         </div>
       </details>
     </section>
-
     <footer>
       © <span id="y"></span> Kruti Kotadia · Built for GitHub Pages
     </footer>
   </div>
-
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
