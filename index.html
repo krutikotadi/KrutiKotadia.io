@@ -1,172 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kruti Kotadia | Data Engineer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{--primary:#1976d2;--ink:#203040;--muted:#5a6b7a;--chip:#e3f2fd;--bg:#f5fbfc;}
-    *{box-sizing:border-box}
-    body{font-family:'Montserrat',sans-serif;background:var(--bg);margin:0;color:var(--ink);}
-    .container{max-width:1080px;margin:2rem auto;padding:2rem;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(25,118,210,.08)}
-    header.hero{display:flex;flex-direction:column;gap:.5rem}
-    h1{color:var(--primary);font-size:2.2rem;margin:.25rem 0}
-    .subtitle{color:var(--muted);font-weight:600}
-    .animated-text{display:inline-block;border-right:.1em solid var(--primary);white-space:nowrap;overflow:hidden;animation:typing 2.2s steps(32,end), blink 1s step-end infinite}
-    @keyframes typing{from{width:0} to{width:32ch}}
-    @keyframes blink{0%,100%{border-color:transparent}40%{border-color:var(--primary)}}
-    section{margin-top:2rem}
-    h2{font-size:1.4rem;color:#275c68;margin:.2rem 0 1rem}
-    .chips{display:flex;flex-wrap:wrap;gap:.5rem}
-    .chip{background:var(--chip);color:var(--primary);border-radius:999px;padding:.35rem .7rem;font-size:.9rem}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
-    .col-6{grid-column:span 6}
-    .col-12{grid-column:span 12}
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-    .card{background:#fafbff;border:1px solid #e8eef6;border-radius:12px;padding:1rem;transition:.2s;display:flex;flex-direction:column;gap:.5rem}
-    .card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(25,118,210,.15)}
-    .card h3{color:#0d47a1;margin:.2rem 0;font-size:1.05rem}
-    .card p{margin:.2rem 0;color:#224266;font-size:.95rem}
-    .card .links a{font-size:.9rem;color:var(--primary);text-decoration:none}
-    .card .role{font-weight:600;color:#0d47a1;font-size:1rem}
-    .card .company{color:#47607a;font-size:.9rem;margin-bottom:.4rem}
-    .card .duration{color:#708090;font-size:.85rem;font-style:italic}
-    ul{margin:.2rem 0 .2rem 1.2rem}
-    .meta{color:#47607a;font-size:.9rem}
-    .social{display:flex;gap:1rem;font-size:1.5rem}
-    .social a{color:var(--primary);transition:.2s}
-    .social a:hover{color:#0d47a1}
-    .timeline{position:relative;padding-left:2rem}
-    .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--primary),#e3f2fd)}
-    .experience-cards{display:grid;gap:1.5rem}
-    .about-story{line-height:1.7;color:#2c3e50;font-size:1rem}
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --bg-gray: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gray);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header.hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      background: var(--card-bg);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .social a {
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .social a:hover {
+      color: var(--primary);
+    }
+    section {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+    }
+    .about-text {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .open-to-work {
+      background: #dbeafe;
+      color: var(--primary-dark);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--bg-gray);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(37,99,235,0.15);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    .card .tech {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .card .link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .card .link:hover {
+      text-decoration: underline;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+    }
+    .btn-resume {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+      margin-top: 1rem;
+    }
+    .btn-resume:hover {
+      background: var(--primary-dark);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header class="hero">
       <h1>Kruti Kotadia</h1>
-      <p class="subtitle"><span class="animated-text">Data Engineer | BI Developer</span></p>
+      <p class="subtitle">Data Engineer | BI Developer | Analytics Professional</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/kruti-kotadia" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/krutikotadi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:k26kotadia@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
     </header>
+
     <section id="about">
-      <h2>About</h2>
-      <div class="about-story">
-        <p>My journey into data began with curiosity—a fascination with how patterns hidden in raw numbers could unlock powerful stories and drive real business impact. With a Master's in Applied Data Science from Syracuse University and hands-on experience spanning data engineering, business intelligence, and analytics, I've transformed that curiosity into a career dedicated to building scalable data solutions.</p>
-        <p>From architecting cloud-based ETL pipelines on AWS and Snowflake to designing dimensional models that power executive dashboards, I thrive at the intersection of engineering rigor and analytical insight. Whether it's optimizing query performance, automating data workflows with Airflow and DBT, or collaborating with stakeholders to translate complex requirements into elegant solutions, I'm driven by the belief that great data infrastructure empowers great decisions.</p>
+      <h2>Who am I?</h2>
+      <p class="about-text">
+        I'm Kruti Kotadia, a Data Engineer with a passion for transforming raw data into actionable insights. 
+        With a Master's in Applied Data Science from Syracuse University and hands-on experience in data engineering, 
+        business intelligence, and analytics, I specialize in building scalable data solutions that drive business impact.
+      </p>
+      <p class="about-text">
+        From architecting cloud-based ETL pipelines on AWS and Snowflake to designing dimensional models that power 
+        executive dashboards, I thrive at the intersection of engineering rigor and analytical insight. I excel in 
+        Python, SQL, AWS, Snowflake, DBT, Tableau, and Power BI, and I'm enthusiastic about continuous learning 
+        and turning data into strategic decisions.
+      </p>
+      <div class="open-to-work">
+        <i class="fas fa-briefcase"></i> Open to Data Engineer, Data Analyst, BI Developer, and Business Intelligence Analyst roles
       </div>
     </section>
-    <section id="skills">
-      <h2>Core Skills</h2>
-      <div class="chips">
-        <span class="chip">Python</span>
-        <span class="chip">SQL</span>
-        <span class="chip">AWS</span>
-        <span class="chip">Snowflake</span>
-        <span class="chip">DBT</span>
-        <span class="chip">Spark</span>
-        <span class="chip">Tableau</span>
-        <span class="chip">Power BI</span>
-        <span class="chip">Airflow</span>
-        <span class="chip">ETL</span>
-      </div>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="experience-cards">
-        <article class="card">
-          <div class="role">Data Engineer Intern</div>
-          <div class="company">Tech Solutions Inc. • Remote</div>
-          <div class="duration">May 2024 – Aug 2024</div>
-          <ul>
-            <li>Designed and deployed ETL pipelines on AWS, reducing data processing time by 40%</li>
-            <li>Built dimensional data models in Snowflake serving 5+ analytics teams</li>
-            <li>Automated data quality checks with DBT, improving data reliability by 30%</li>
-          </ul>
-        </article>
-        <article class="card">
-          <div class="role">Business Intelligence Analyst</div>
-          <div class="company">DataViz Corp • Syracuse, NY</div>
-          <div class="duration">Jan 2024 – Apr 2024</div>
-          <ul>
-            <li>Created interactive Tableau dashboards for C-suite executives tracking KPIs</li>
-            <li>Optimized SQL queries, improving report load times by 50%</li>
-            <li>Collaborated with cross-functional teams to translate business needs into data solutions</li>
-          </ul>
-        </article>
-        <article class="card">
-          <div class="role">Junior Data Analyst</div>
-          <div class="company">Analytics Hub • Mumbai, India</div>
-          <div class="duration">Jul 2019 – Jun 2023</div>
-          <ul>
-            <li>Conducted data analysis supporting strategic business decisions across departments</li>
-            <li>Developed Power BI reports automating monthly reporting workflows</li>
-            <li>Performed data cleaning and transformation for datasets with 1M+ records</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+
     <section id="projects">
-      <h2>Featured Projects</h2>
+      <h2>Recent Work</h2>
       <div class="projects">
         <article class="card">
           <h3>IMDb Data Analysis & Warehousing</h3>
-          <p>Comprehensive data warehousing project processing large-scale IMDb datasets. Built dimensional models (star schema) for efficient querying, implemented ETL pipelines with optimization strategies, and created interactive BI dashboards for movie industry insights.</p>
-          <ul>
-            <li>Designed and implemented star schema with fact and dimension tables</li>
-            <li>Optimized ETL processes for data ingestion and transformation</li>
-            <li>Built interactive dashboards in Tableau and Power BI</li>
-            <li>Leveraged Snowflake for cloud data warehousing</li>
-            <li>Used DBT for data transformation and modeling</li>
-            <li>Integrated with Oracle for legacy data sources</li>
-          </ul>
-          <div class="meta">Tech: Snowflake, DBT, Tableau, Power BI, Oracle, Dimensional Modeling, ETL Optimization, Data Warehousing, BI</div>
+          <p>Comprehensive data warehousing project processing large-scale IMDb datasets. Built dimensional models (star schema) for efficient querying, implemented ETL pipelines with optimization strategies, and created interactive BI dashboards.</p>
+          <p class="tech">Tech: Snowflake, DBT, Tableau, Power BI, Oracle, ETL, Data Warehousing</p>
+          <a href="https://github.com/krutikotadi" class="link" target="_blank">View Project →</a>
         </article>
+
         <article class="card">
-          <h3>Smart-Visual-Question-Answering</h3>
-          <p>Prototype VQA system for visually impaired users: ask a question about an image and receive a helpful answer.</p>
-          <div class="meta">Tech: Deep Learning, Computer Vision, NLP</div>
-          <div class="links"><a href="https://github.com/krutikotadi/Smart-Visual-Question-Answering" rel="noopener" target="_blank">Repository ↗</a></div>
+          <h3>Smart Visual Question Answering</h3>
+          <p>Prototype VQA system for visually impaired users: ask a question about an image and receive a helpful answer using deep learning and computer vision.</p>
+          <p class="tech">Tech: Deep Learning, Computer Vision, NLP, Python</p>
+          <a href="https://github.com/krutikotadi/Smart-Visual-Question-Answering" class="link" target="_blank">View Project →</a>
+        </article>
+
+        <article class="card">
+          <h3>Energy Consumption Forecasting</h3>
+          <p>Time series analysis and forecasting model to predict energy consumption patterns using machine learning algorithms for optimal resource planning.</p>
+          <p class="tech">Tech: Python, Time Series Analysis, Machine Learning, Pandas</p>
+          <a href="https://github.com/krutikotadi" class="link" target="_blank">View Project →</a>
+        </article>
+
+        <article class="card">
+          <h3>AI Careers Visualization</h3>
+          <p>Scraped and analyzed AI job postings to highlight skills trends and hiring outlook, creating interactive Tableau dashboards for insights.</p>
+          <p class="tech">Tech: Python, Web Scraping, Tableau, Data Visualization</p>
+          <a href="https://github.com/krutikotadi" class="link" target="_blank">View Project →</a>
+        </article>
+
+        <article class="card">
+          <h3>Customer Segmentation Analysis</h3>
+          <p>Performed clustering analysis on customer data to identify distinct segments for targeted marketing strategies and business growth.</p>
+          <p class="tech">Tech: Python, K-Means, Machine Learning, Power BI</p>
+          <a href="https://github.com/krutikotadi" class="link" target="_blank">View Project →</a>
+        </article>
+
+        <article class="card">
+          <h3>Sales Dashboard & Analytics</h3>
+          <p>Built comprehensive sales analytics dashboard with KPI tracking, trend analysis, and forecasting capabilities for executive decision-making.</p>
+          <p class="tech">Tech: Power BI, SQL, DAX, Data Modeling</p>
+          <a href="https://github.com/krutikotadi" class="link" target="_blank">View Project →</a>
         </article>
       </div>
     </section>
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>MS, Applied Data Science</strong> — Syracuse University (2023–2025)</li>
-        <li><strong>BS, Information Technology</strong> — University of Mumbai (2016–2019)</li>
-      </ul>
-    </section>
+
     <section id="contact">
-      <h2>Contact</h2>
-      <p class="meta">Open to Business Analyst, Data Analyst, Data Engineer, and Business Intelligence Analyst roles. Feel free to reach out.</p>
-      <div class="social">
-        <a href="mailto:k26kotadia@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://github.com/krutikotadi" rel="noopener" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/kruti-kotadia" rel="noopener" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <h2>Get In Touch</h2>
+      <p class="about-text">
+        I'm interested in new opportunities – especially challenging data engineering and analytics projects. 
+        However, if you have other requests or questions, don't hesitate to reach out.
+      </p>
+      <a href="#" class="btn-resume" onclick="alert('Resume download link - please add your resume URL'); return false;">Download Resume</a>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:k26kotadia@gmail.com" style="color: var(--text-muted); text-decoration: none;">k26kotadia@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/kruti-kotadia" target="_blank" style="color: var(--text-muted); text-decoration: none;">LinkedIn Profile</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/krutikotadi" target="_blank" style="color: var(--text-muted); text-decoration: none;">GitHub Profile</a>
+        </div>
       </div>
     </section>
-    <section id="more">
-      <details>
-        <summary>More Selected Work</summary>
-        <div class="projects" style="margin-top: .75rem;">
-          <article class="card">
-            <h3>AI Careers Visualization</h3>
-            <p>Scraped and analyzed AI job postings to highlight skills trends and hiring outlook.</p>
-            <div class="meta">Tech: Python, Tableau</div>
-          </article>
-        </div>
-      </details>
-    </section>
+
     <footer>
-      <p>© <span id="y"></span> Kruti Kotadia · Built for GitHub Pages</p>
+      <p>© 2025 Kruti Kotadia · Built for GitHub Pages</p>
     </footer>
   </div>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
