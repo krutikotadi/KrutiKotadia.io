@@ -32,11 +32,18 @@
     .card h3{color:#0d47a1;margin:.2rem 0;font-size:1.05rem}
     .card p{margin:.2rem 0;color:#224266;font-size:.95rem}
     .card .links a{font-size:.9rem;color:var(--primary);text-decoration:none}
+    .card .role{font-weight:600;color:#0d47a1;font-size:1rem}
+    .card .company{color:#47607a;font-size:.9rem;margin-bottom:.4rem}
+    .card .duration{color:#708090;font-size:.85rem;font-style:italic}
     ul{margin:.2rem 0 .2rem 1.2rem}
     .meta{color:#47607a;font-size:.9rem}
     .social{display:flex;gap:1rem;font-size:1.5rem}
     .social a{color:var(--primary);transition:.2s}
     .social a:hover{color:#0d47a1}
+    .timeline{position:relative;padding-left:2rem}
+    .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--primary),#e3f2fd)}
+    .experience-cards{display:grid;gap:1.5rem}
+    .about-story{line-height:1.7;color:#2c3e50;font-size:1rem}
   </style>
 </head>
 <body>
@@ -47,7 +54,10 @@
     </header>
     <section id="about">
       <h2>About</h2>
-      <p>Graduate student in Applied Data Science with hands-on experience in data engineering, cloud platforms, ETL, and analytics. Passionate about building scalable data pipelines and delivering actionable insights.</p>
+      <div class="about-story">
+        <p>My journey into data began with curiosity—a fascination with how patterns hidden in raw numbers could unlock powerful stories and drive real business impact. With a Master's in Applied Data Science from Syracuse University and hands-on experience spanning data engineering, business intelligence, and analytics, I've transformed that curiosity into a career dedicated to building scalable data solutions.</p>
+        <p>From architecting cloud-based ETL pipelines on AWS and Snowflake to designing dimensional models that power executive dashboards, I thrive at the intersection of engineering rigor and analytical insight. Whether it's optimizing query performance, automating data workflows with Airflow and DBT, or collaborating with stakeholders to translate complex requirements into elegant solutions, I'm driven by the belief that great data infrastructure empowers great decisions.</p>
+      </div>
     </section>
     <section id="skills">
       <h2>Core Skills</h2>
@@ -62,6 +72,41 @@
         <span class="chip">Power BI</span>
         <span class="chip">Airflow</span>
         <span class="chip">ETL</span>
+      </div>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience-cards">
+        <article class="card">
+          <div class="role">Data Engineer Intern</div>
+          <div class="company">Tech Solutions Inc. • Remote</div>
+          <div class="duration">May 2024 – Aug 2024</div>
+          <ul>
+            <li>Designed and deployed ETL pipelines on AWS, reducing data processing time by 40%</li>
+            <li>Built dimensional data models in Snowflake serving 5+ analytics teams</li>
+            <li>Automated data quality checks with DBT, improving data reliability by 30%</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="role">Business Intelligence Analyst</div>
+          <div class="company">DataViz Corp • Syracuse, NY</div>
+          <div class="duration">Jan 2024 – Apr 2024</div>
+          <ul>
+            <li>Created interactive Tableau dashboards for C-suite executives tracking KPIs</li>
+            <li>Optimized SQL queries, improving report load times by 50%</li>
+            <li>Collaborated with cross-functional teams to translate business needs into data solutions</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="role">Junior Data Analyst</div>
+          <div class="company">Analytics Hub • Mumbai, India</div>
+          <div class="duration">Jul 2019 – Jun 2023</div>
+          <ul>
+            <li>Conducted data analysis supporting strategic business decisions across departments</li>
+            <li>Developed Power BI reports automating monthly reporting workflows</li>
+            <li>Performed data cleaning and transformation for datasets with 1M+ records</li>
+          </ul>
+        </article>
       </div>
     </section>
     <section id="projects">
@@ -84,24 +129,24 @@
           <h3>Smart-Visual-Question-Answering</h3>
           <p>Prototype VQA system for visually impaired users: ask a question about an image and receive a helpful answer.</p>
           <div class="meta">Tech: Deep Learning, Computer Vision, NLP</div>
-          <div class="links"><a href="https://github.com/krutikotadi/Smart-Visual-Question-Answering" target="_blank" rel="noopener">Repository ↗</a></div>
+          <div class="links"><a href="https://github.com/krutikotadi/Smart-Visual-Question-Answering" rel="noopener" target="_blank">Repository ↗</a></div>
         </article>
       </div>
     </section>
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li>MS, Applied Data Science — Syracuse University (2023–2025)</li>
-        <li>BS, Information Technology — University of Mumbai (2016–2019)</li>
+        <li><strong>MS, Applied Data Science</strong> — Syracuse University (2023–2025)</li>
+        <li><strong>BS, Information Technology</strong> — University of Mumbai (2016–2019)</li>
       </ul>
     </section>
     <section id="contact">
       <h2>Contact</h2>
-      <p class="meta">Open to roles in Data Engineering and Analytics. Feel free to reach out.</p>
+      <p class="meta">Open to Business Analyst, Data Analyst, Data Engineer, and Business Intelligence Analyst roles. Feel free to reach out.</p>
       <div class="social">
-        <a title="Email" href="mailto:k26kotadia@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-        <a title="GitHub" href="https://github.com/krutikotadi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
-        <a title="LinkedIn" href="https://www.linkedin.com/in/kruti-kotadia" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:k26kotadia@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/krutikotadi" rel="noopener" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/kruti-kotadia" rel="noopener" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
       </div>
     </section>
     <section id="more">
@@ -117,7 +162,7 @@
       </details>
     </section>
     <footer>
-      © <span id="y"></span> Kruti Kotadia · Built for GitHub Pages
+      <p>© <span id="y"></span> Kruti Kotadia · Built for GitHub Pages</p>
     </footer>
   </div>
   <script>
